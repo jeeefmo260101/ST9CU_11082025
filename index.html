@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografis Hak Cuti PNS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .kpi-card {
+            background-color: #ffffff;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            border-left: 5px solid #005CB9;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .kpi-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        .kpi-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #00449E;
+            line-height: 1.2;
+        }
+        .kpi-label {
+            font-size: 1rem;
+            color: #3E92D5;
+            margin-top: 0.5rem;
+        }
+        .flowchart-step {
+            background-color: #eef5ff;
+            border: 2px dashed #6AAEE1;
+            color: #00449E;
+        }
+        .flowchart-arrow {
+            color: #0072CE;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-[#00449E] mb-2">Panduan Visual Hak Cuti PNS</h1>
+            <p class="text-lg text-[#0072CE]">Memahami Hak Cuti Tahunan dan Cuti Besar Anda</p>
+        </header>
+
+        <main class="space-y-12">
+
+            <section id="cuti-tahunan" class="bg-white p-6 md:p-8 rounded-xl shadow-lg">
+                <h2 class="text-3xl font-bold text-[#005CB9] mb-6 border-b-4 border-[#6AAEE1] pb-2">Cuti Tahunan 🗓️</h2>
+                <p class="text-base text-gray-600 mb-8 max-w-3xl">
+                    Cuti tahunan adalah hak istirahat dasar bagi PNS untuk memulihkan kondisi fisik dan mental setelah bekerja selama satu tahun. Berikut adalah poin-poin penting yang perlu diketahui.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="space-y-6">
+                        <div class="kpi-card">
+                            <div class="kpi-number">1 <span class="text-2xl">Tahun</span></div>
+                            <div class="kpi-label">Masa Kerja Minimum</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-number">12 <span class="text-2xl">Hari</span></div>
+                            <div class="kpi-label">Durasi Cuti Kerja</div>
+                        </div>
+                         <div class="kpi-card border-left-red-500">
+                            <div class="kpi-number text-red-600">🚫</div>
+                            <div class="kpi-label text-red-500">Sisa Cuti Tidak Dapat Diuangkan</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-[#005CB9] mb-4">Proses Pengajuan Cuti Tahunan</h3>
+                        <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
+                            <div class="p-4 rounded-lg text-center flowchart-step">
+                                <div class="text-2xl mb-2">👤</div>
+                                <div>PNS Mengajukan</div>
+                            </div>
+                            <div class="text-4xl font-light flowchart-arrow transform md:-rotate-0 rotate-90">→</div>
+                            <div class="p-4 rounded-lg text-center flowchart-step">
+                                <div class="text-2xl mb-2">✍️</div>
+                                <div>Pejabat Berwenang</div>
+                            </div>
+                             <div class="text-4xl font-light flowchart-arrow transform md:-rotate-0 rotate-90">→</div>
+                            <div class="p-4 rounded-lg text-center flowchart-step bg-green-100 border-green-400 text-green-700">
+                                <div class="text-2xl mb-2">✅</div>
+                                <div>Cuti Disetujui</div>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-500 mt-4 text-center">Pengajuan harus selalu melalui pejabat yang berwenang memberikan cuti untuk proses persetujuan resmi.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="cuti-besar" class="bg-white p-6 md:p-8 rounded-xl shadow-lg">
+                <h2 class="text-3xl font-bold text-[#005CB9] mb-6 border-b-4 border-[#6AAEE1] pb-2">Cuti Besar ⏳</h2>
+                 <p class="text-base text-gray-600 mb-8 max-w-3xl">
+                    Diberikan sebagai bentuk penghargaan atas pengabdian jangka panjang, cuti besar memberikan kesempatan istirahat yang jauh lebih panjang bagi PNS yang telah memenuhi syarat masa kerja.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="kpi-card">
+                        <div class="kpi-number">5 <span class="text-2xl">Tahun</span></div>
+                        <div class="kpi-label">Masa Kerja Minimum Terus-Menerus</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-number">3 <span class="text-2xl">Bulan</span></div>
+                        <div class="kpi-label">Total Durasi Cuti</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="perbandingan" class="bg-white p-6 md:p-8 rounded-xl shadow-lg">
+                <h2 class="text-3xl font-bold text-[#005CB9] mb-2 text-center">Perbandingan Hak Cuti</h2>
+                <p class="text-base text-gray-600 mb-8 text-center max-w-3xl mx-auto">
+                    Visualisasi ini membandingkan perbedaan utama antara Cuti Tahunan dan Cuti Besar dalam hal syarat masa kerja dan durasi yang diberikan. Perhatikan perbedaan skala yang signifikan antara keduanya.
+                </p>
+                <div class="chart-container">
+                    <canvas id="comparisonChart"></canvas>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="text-center mt-12 pt-8 border-t border-gray-300">
+            <p class="text-gray-500">Infografis ini dirancang untuk memberikan gambaran umum. Selalu merujuk pada peraturan kepegawaian yang berlaku untuk detail lengkap.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const ctx = document.getElementById('comparisonChart').getContext('2d');
+            
+            const comparisonChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Masa Kerja Minimum (Tahun)', 'Durasi Cuti (Hari Kerja)'],
+                    datasets: [
+                        {
+                            label: 'Cuti Tahunan',
+                            data: [1, 12],
+                            backgroundColor: '#3E92D5',
+                            borderColor: '#0072CE',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Cuti Besar',
+                            data: [5, 66],
+                            backgroundColor: '#005CB9',
+                            borderColor: '#00449E',
+                            borderWidth: 1
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Syarat Minimum vs. Durasi Cuti',
+                            font: {
+                                size: 18
+                            },
+                            color: '#00449E',
+                            padding: {
+                                bottom: 20
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: function(tooltipItems) {
+                                    const item = tooltipItems[0];
+                                    let label = item.chart.data.labels[item.dataIndex];
+                                    if (Array.isArray(label)) {
+                                      return label.join(' ');
+                                    } else {
+                                      return label;
+                                    }
+                                }
+                            }
+                        },
+                        legend: {
+                            position: 'top',
+                        },
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Jumlah (Tahun / Hari)',
+                                color: '#005CB9'
+                            },
+                            grid: {
+                                color: '#e0e0e0'
+                            }
+                        },
+                        x: {
+                             grid: {
+                                display: false
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
